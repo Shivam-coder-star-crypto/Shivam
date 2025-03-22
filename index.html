@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Clock</title>
+    <link rel="stylesheet" href="Analogstyle.css">
+</head>
+<body>
+    <h1>Analog Clock</h1>
+    <div class="clock">
+        <div class="hand hour" id="hour"></div>
+        <div class="hand minute" id="minute"></div>
+        <div class="hand second" id="second"></div>
+        <div class="center"></div>
+        <!-- Clock Numbers 1 to 12 -->
+        <script>
+            const clock = document.querySelector('.clock');
+            for (let i = 1; i <= 12; i++) {
+                const angle = (i * 30) * (Math.PI / 180);
+                const x = 50 + 40 * Math.sin(angle);
+                const y = 50 - 40 * Math.cos(angle);
+                clock.innerHTML += `<div class="number" style="top: ${y}%; left: ${x}%">${i}</div>`;
+            }
+        </script>
+    </div>
+
+    <script src="Analog_clock.js"></script>
+</body>
+</html>
